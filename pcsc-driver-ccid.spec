@@ -14,8 +14,8 @@ BuildRequires:	pcsc-lite-devel
 Requires:	pcsc-lite
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		usbdropdir	/usr/lib/pcsc/drivers
-%define		ccidtwindir	/usr/lib/pcsc/drivers
+%define		usbdropdir	/usr/%{_lib}/pcsc/drivers
+%define		ccidtwindir	/usr/%{_lib}/pcsc/drivers
 
 %description
 This package provides generic USB CCID (Chip/Smart Card Interface
