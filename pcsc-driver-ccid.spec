@@ -5,7 +5,7 @@ Version:	0.9.2
 Release:	1
 License:	GPL
 Group:		Libraries
-#Source0Download: http://alioth.debian.org/project/showfiles.php?group_id=1225
+#Source0Download: http://alioth.debian.org/project/showfiles.php?group_id=30105
 Source0:	http://alioth.debian.org/download.php/755/ccid-%{version}.tar.gz
 # Source0-md5:	9fe31ed0d51951507e8360cc43aac4f1
 URL:		http://pcsclite.alioth.debian.org/ccid.html
