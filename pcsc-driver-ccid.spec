@@ -1,17 +1,17 @@
 Summary:	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 Summary(pl):	Ogólny sterownik USB CCID (Chip/Smart Card Interface Devices)
 Name:		pcsc-driver-ccid
-Version:	0.9.2
+Version:	0.9.3
 Release:	1
-License:	GPL
+License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: http://alioth.debian.org/project/showfiles.php?group_id=30105
-Source0:	http://alioth.debian.org/download.php/755/ccid-%{version}.tar.gz
-# Source0-md5:	9fe31ed0d51951507e8360cc43aac4f1
+Source0:	http://alioth.debian.org/download.php/992/ccid-%{version}.tar.gz
+# Source0-md5:	8acb2393aa9e00a2e7ad845ee60b52df
 URL:		http://pcsclite.alioth.debian.org/ccid.html
 BuildRequires:	libusb-devel >= 0.1.7
 BuildRequires:	pcsc-lite-devel >= 1.2.9-0.beta5
-Requires:	pcsc-lite >= 1.2.9-0.beta3
+Requires:	pcsc-lite >= 1.2.9-0.beta5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		usbdropdir	/usr/%{_lib}/pcsc/drivers
@@ -41,7 +41,7 @@ Interface Devices). Obs³ugiwane czytniki CCID:
 Summary:	Generic USB CCID driver for readers connected to serial port
 Summary(pl):	Ogólny sterownik USB CCID dla czytników pod³±czonych przez port szeregowy
 Group:		Libraries
-Requires:	pcsc-lite >= 1.2.9-0.beta3
+Requires:	pcsc-lite >= 1.2.9-0.beta5
 
 %description serial
 Generic USB CCID driver for readers connected to serial port.
