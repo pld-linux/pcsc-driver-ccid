@@ -1,17 +1,17 @@
 Summary:	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 Summary(pl):	Ogólny sterownik USB CCID (Chip/Smart Card Interface Devices)
 Name:		pcsc-driver-ccid
-Version:	0.9.3
+Version:	0.9.4
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: http://alioth.debian.org/project/showfiles.php?group_id=30105
-Source0:	http://alioth.debian.org/download.php/992/ccid-%{version}.tar.gz
-# Source0-md5:	8acb2393aa9e00a2e7ad845ee60b52df
+Source0:	http://alioth.debian.org/download.php/1291/ccid-%{version}.tar.gz
+# Source0-md5:	9c73165ceb105b648847bc6ded747209
 URL:		http://pcsclite.alioth.debian.org/ccid.html
 BuildRequires:	libusb-devel >= 0.1.7
-BuildRequires:	pcsc-lite-devel >= 1.2.9-0.beta5
-Requires:	pcsc-lite >= 1.2.9-0.beta5
+BuildRequires:	pcsc-lite-devel >= 1.2.9-0.beta9
+Requires:	pcsc-lite >= 1.2.9-0.beta9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		usbdropdir	/usr/%{_lib}/pcsc/drivers
@@ -20,28 +20,40 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 This package provides generic USB CCID (Chip/Smart Card Interface
 Devices) driver. Supported CCID readers:
-- Gemplus: GemPC 433 SL, GemPC Key, GemPC Twin
-- C3PO LTC31
-- OmniKey CardMan 3121
-- SCM Micro: SCR 331, SCR 335, SCR 331-DI, SPR 532
 - ActivCard USB reader 2.0
+- Advanced Card Systems ACR 38
+- C3PO: LTC31, TLTC2USB
+- Cherry: XX33, XX44, SmartTerminal ST2XX, ST-1044U
+- Dell: SK-3106 keyboard
+- Eutron: SIM Pocket Combo, CryptoIdentity
+- Gemplus: GemPC 433 SL, GemPC Key, GemPC Twin
+- Kobil: KAAN Base, KAAN Advanced, KAAN SIM III, mIDentity
+- OmniKey CardMan 3121
+- SCM Micro: SCR 331, SCR 331-DI, SCR 333, SCR 335, SCR 3310, SPR 532
 - Silitek SK-3105 keyboard
+- Verisign: Secure Storage Token, Secure Token
 
 %description -l pl
 Ten pakiet zawiera ogólny sterownik USB CCID (Chip/Smart Card
 Interface Devices). Obs³ugiwane czytniki CCID:
-- Gemplus: GemPC 433 SL, GemPC Key, GemPC Twin
-- C3PO LTC31
-- OmniKey CardMan 3121
-- SCM Micro: SCR 331, SCR 335, SCR 331-DI, SPR 532
 - ActivCard USB reader 2.0
-- klawiatura Silitek SK-3105
+- Advanced Card Systems ACR 38
+- C3PO: LTC32, TLTC2USB
+- Cherry: XX33, XX44, SmartTerminal ST2XX, ST-1044U
+- Dell: klawiatura SK-3106
+- Eutron: SIM Pocket Combo, CryptoIdentity
+- Gemplus: GemPC 433 SL, GemPC Key, GemPC Twin
+- Kobil: KAAN Base, KAAN Advanced, KAAN SIM III, mIDentity
+- OmniKey CardMan 3121
+- SCM Micro: SCR 331, SCR 331-DI, SCR 333, SCR 335, SCR 3310, SPR 532
+- Silitek: klawiatura SK-3105
+- Verisign: Secure Storage Token, Secure Token
 
 %package serial
 Summary:	Generic USB CCID driver for readers connected to serial port
 Summary(pl):	Ogólny sterownik USB CCID dla czytników pod³±czonych przez port szeregowy
 Group:		Libraries
-Requires:	pcsc-lite >= 1.2.9-0.beta5
+Requires:	pcsc-lite >= 1.2.9-0.beta9
 
 %description serial
 Generic USB CCID driver for readers connected to serial port.
