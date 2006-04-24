@@ -1,13 +1,13 @@
 Summary:	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 Summary(pl):	Ogólny sterownik USB CCID (Chip/Smart Card Interface Devices)
 Name:		pcsc-driver-ccid
-Version:	1.0.0
+Version:	1.0.1
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: http://alioth.debian.org/project/showfiles.php?group_id=30105
-Source0:	http://alioth.debian.org/download.php/1474/ccid-%{version}.tar.gz
-# Source0-md5:	cae1d55c3361d6202adfdbea9d4e94d7
+Source0:	http://alioth.debian.org/download.php/1563/ccid-%{version}.tar.gz
+# Source0-md5:	858bd7d680cdaf0ac53c70d43974a2df
 URL:		http://pcsclite.alioth.debian.org/ccid.html
 BuildRequires:	libusb-devel >= 0.1.7
 BuildRequires:	pcsc-lite-devel >= 1.3.0
@@ -30,8 +30,10 @@ Devices) driver. Supported CCID readers:
 - Gemplus: GemPC 433 SL, GemPC Key, GemPC Twin, GemCore POS Pro,
   GemCore SIM Pro
 - Kobil: KAAN Base, KAAN Advanced, KAAN SIM III, mIDentity
-- OmniKey: CardMan 3121, CardMan 3821, CardMan 5125, CardMan 6121
-- SCM Micro: SCR 331, SCR 331-DI, SCR 333, SCR 335, SCR 3310, SPR 532
+- OmniKey: CardMan 3121, CardMan 3621, CardMan 3821, CardMan 5125,
+  CardMan 6121
+- SCM Micro: SCR 331, SCR 331-DI, SCR 333, SCR 335, SCR 355, SCR 3310,
+  SCR 3311, SCR 3340, SPR 532, SDI 010
 - Silitek SK-3105 keyboard
 - SmartEpad v2.0
 - Verisign: Secure Storage Token, Secure Token
@@ -49,8 +51,10 @@ Interface Devices). Obs³ugiwane czytniki CCID:
 - Gemplus: GemPC 433 SL, GemPC Key, GemPC Twin, GemCore POS Pro,
   GemCore SIM Pro
 - Kobil: KAAN Base, KAAN Advanced, KAAN SIM III, mIDentity
-- OmniKey: CardMan 3121, CardMan 3821, CardMan 5125, CardMan 6121
-- SCM Micro: SCR 331, SCR 331-DI, SCR 333, SCR 335, SCR 3310, SPR 532
+- OmniKey: CardMan 3121, CardMan 3621, CardMan 3821, CardMan 5125,
+  CardMan 6121
+- SCM Micro: SCR 331, SCR 331-DI, SCR 333, SCR 335, SCR 355, SCR 3310,
+  SCR 3311, SCR 3340, SPR 532, SDI 010
 - Silitek: klawiatura SK-3105
 - SmartEpad v2.0
 - Verisign: Secure Storage Token, Secure Token
