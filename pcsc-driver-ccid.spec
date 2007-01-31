@@ -1,13 +1,13 @@
 Summary:	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 Summary(pl):	Ogólny sterownik USB CCID (Chip/Smart Card Interface Devices)
 Name:		pcsc-driver-ccid
-Version:	1.2.0
+Version:	1.2.1
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: http://alioth.debian.org/project/showfiles.php?group_id=30105
-Source0:	http://alioth.debian.org/frs/download.php/1867/ccid-%{version}.tar.gz
-# Source0-md5:	d679fee9c7b3ca2d865216b45452d885
+Source0:	http://alioth.debian.org/frs/download.php/1880/ccid-%{version}.tar.gz
+# Source0-md5:	13353ad33b06d2cd086bbcaee6402119
 URL:		http://pcsclite.alioth.debian.org/ccid.html
 BuildRequires:	libusb-devel >= 0.1.7
 BuildRequires:	pcsc-lite-devel >= 1.3.3
@@ -35,6 +35,7 @@ Devices) driver. Supported CCID readers:
 - HP: USB Smart Card Keyboard, USB Smartcard Reader
 - id3 Semiconductors: CL1356D, CL1356T
 - Kobil: KAAN Base, KAAN Advanced, KAAN SIM III, mIDentity
+- O2Micro Oz7762
 - OmniKey: CardMan 1021, CardMan 3021, CardMan 3121, CardMan 3621,
   CardMan 3821, CardMan 5125, CardMan 6121
 - RSA SecurID SID800
@@ -63,6 +64,7 @@ Interface Devices). Obs³ugiwane czytniki CCID:
 - HP: USB Smart Card Keyboard, USB Smartcard Reader
 - id3 Semiconductors: CL1356D, CL1356T
 - Kobil: KAAN Base, KAAN Advanced, KAAN SIM III, mIDentity
+- O2Micro Oz7762
 - OmniKey: CardMan 1021, CardMan 3021, CardMan 3121, CardMan 3621,
   CardMan 3821, CardMan 5125, CardMan 6121
 - RSA SecurID SID800
