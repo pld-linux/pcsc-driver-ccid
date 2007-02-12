@@ -1,5 +1,5 @@
 Summary:	Generic USB CCID (Chip/Smart Card Interface Devices) driver
-Summary(pl):	Og髄ny sterownik USB CCID (Chip/Smart Card Interface Devices)
+Summary(pl.UTF-8):   Og贸lny sterownik USB CCID (Chip/Smart Card Interface Devices)
 Name:		pcsc-driver-ccid
 Version:	1.2.1
 Release:	1
@@ -47,9 +47,9 @@ Devices) driver. Supported CCID readers:
 - Winbond Electronics
 - Xiring Teo
 
-%description -l pl
-Ten pakiet zawiera og髄ny sterownik USB CCID (Chip/Smart Card
-Interface Devices). Obs硊giwane czytniki CCID:
+%description -l pl.UTF-8
+Ten pakiet zawiera og贸lny sterownik USB CCID (Chip/Smart Card
+Interface Devices). Obs艂ugiwane czytniki CCID:
 - ActivCard USB reader 2.0
 - Advanced Card Systems ACR 38
 - Alcor Micro AU9520
@@ -78,7 +78,7 @@ Interface Devices). Obs硊giwane czytniki CCID:
 
 %package serial
 Summary:	Generic USB CCID driver for readers connected to serial port
-Summary(pl):	Og髄ny sterownik USB CCID dla czytnik體 pod潮czonych przez port szeregowy
+Summary(pl.UTF-8):   Og贸lny sterownik USB CCID dla czytnik贸w pod艂膮czonych przez port szeregowy
 Group:		Libraries
 Requires:	pcsc-lite >= 1.2.9-0.beta9
 
@@ -87,9 +87,9 @@ Generic USB CCID driver for readers connected to serial port.
 Supported CCID readers:
 - Gemplus GemPC Twin
 
-%description serial -l pl
-Og髄ny sterownik USB CCID dla czytnik體 pod潮czonych przez port
-szeregowy. Obs硊giwane czytniki CCID:
+%description serial -l pl.UTF-8
+Og贸lny sterownik USB CCID dla czytnik贸w pod艂膮czonych przez port
+szeregowy. Obs艂ugiwane czytniki CCID:
 - Gemplus GemPC Twin
 
 %prep
