@@ -1,5 +1,5 @@
 Summary:	Generic USB CCID (Chip/Smart Card Interface Devices) driver
-Summary(pl.UTF-8):   Ogólny sterownik USB CCID (Chip/Smart Card Interface Devices)
+Summary(pl.UTF-8):	Ogólny sterownik USB CCID (Chip/Smart Card Interface Devices)
 Name:		pcsc-driver-ccid
 Version:	1.2.1
 Release:	1
@@ -78,7 +78,7 @@ Interface Devices). Obsługiwane czytniki CCID:
 
 %package serial
 Summary:	Generic USB CCID driver for readers connected to serial port
-Summary(pl.UTF-8):   Ogólny sterownik USB CCID dla czytników podłączonych przez port szeregowy
+Summary(pl.UTF-8):	Ogólny sterownik USB CCID dla czytników podłączonych przez port szeregowy
 Group:		Libraries
 Requires:	pcsc-lite >= 1.2.9-0.beta9
 
