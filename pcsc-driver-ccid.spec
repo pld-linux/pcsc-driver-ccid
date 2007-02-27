@@ -80,7 +80,7 @@ Interface Devices). Obsługiwane czytniki CCID:
 Summary:	Generic USB CCID driver for readers connected to serial port
 Summary(pl.UTF-8):	Ogólny sterownik USB CCID dla czytników podłączonych przez port szeregowy
 Group:		Libraries
-Requires:	pcsc-lite >= 1.2.9-0.beta9
+Requires:	pcsc-lite >= 1.3.3
 
 %description serial
 Generic USB CCID driver for readers connected to serial port.
