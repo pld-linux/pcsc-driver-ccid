@@ -1,13 +1,13 @@
 Summary:	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 Summary(pl.UTF-8):	Ogólny sterownik USB CCID (Chip/Smart Card Interface Devices)
 Name:		pcsc-driver-ccid
-Version:	1.3.5
+Version:	1.3.6
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: http://alioth.debian.org/project/showfiles.php?group_id=30105
-Source0:	http://alioth.debian.org/frs/download.php/2330/ccid-%{version}.tar.gz
-# Source0-md5:	4bef11e5fb0ab6e2349936adb7a30cb8
+Source0:	http://alioth.debian.org/frs/download.php/2422/ccid-%{version}.tar.gz
+# Source0-md5:	fe8359632141f69cc6c0ca94c8fa38ee
 URL:		http://pcsclite.alioth.debian.org/ccid.html
 BuildRequires:	libusb-devel >= 0.1.7
 BuildRequires:	pcsc-lite-devel >= 1.3.3
@@ -31,6 +31,7 @@ Devices) driver. Supported CCID readers:
 - Charismathics token
 - Cherry: XX33, XX44, SmartTerminal ST2XX, ST-1044U, ST2000U,
   SmartBoard XX1X
+- Covadis: Alya, Vega
 - Dell: SK-3106 keyboard
 - Eutron: SIM Pocket Combo, CryptoIdentity, Digipass 860, Smart Pocket
 - Fujitsu Siemens Computers: SmartCard USB 2A, SmartCard Keyboard USB
@@ -48,6 +49,7 @@ Devices) driver. Supported CCID readers:
   CardMan 3821, CardMan 4321, CardMan 5121, CardMan 5125, CardMan 5321,
   CardMan 6121
 - Philips JCOP41V221
+- Precise Biometrics 250 MC
 - RSA SecurID SID800
 - SCM Micro: SCR 331, SCR 331-DI, SCR 333, SCR 335, SCR 355, SCR 3310,
   SCR 3311, SCR 3320, SCR 3340, SPR 532, SDI 010
@@ -56,6 +58,8 @@ Devices) driver. Supported CCID readers:
 - Silitek SK-3105 keyboard
 - Sitecom MD-010 USB simcard reader
 - SmartEpad v2.0
+- Validy USB Token
+- Vasco DP905
 - Verisign: Secure Storage Token, Secure Token
 - Winbond Electronics
 - Xiring Teo
@@ -73,6 +77,7 @@ Interface Devices). Obsługiwane czytniki CCID:
 - Charismathics: token
 - Cherry: XX33, XX44, SmartTerminal ST2XX, ST-1044U, ST2000U,
   SmartBoard XX1X
+- Covadis: Alya, Véga
 - Dell: klawiatura SK-3106
 - Eutron: SIM Pocket Combo, CryptoIdentity, Digipass 860, Smart Pocket
 - Fujitsu Siemens Computers: SmartCard USB 2A, SmartCard Keyboard USB
@@ -90,6 +95,7 @@ Interface Devices). Obsługiwane czytniki CCID:
   CardMan 3821, CardMan 4321, CardMan 5121, CardMan 5125, CardMan 5321,
   CardMan 6121
 - Philips JCOP41V221
+- Precise Biometrics 250 MC
 - RSA SecurID SID800
 - SCM Micro: SCR 331, SCR 331-DI, SCR 333, SCR 335, SCR 355, SCR 3310,
   SCR 3311, SCR 3320, SCR 3340, SPR 532, SDI 010
@@ -98,6 +104,8 @@ Interface Devices). Obsługiwane czytniki CCID:
 - Silitek: klawiatura SK-3105
 - Sitecom: czytnik kart USB MD-010
 - SmartEpad v2.0
+- Validy USB Token
+- Vasco DP905
 - Verisign: Secure Storage Token, Secure Token
 - Winbond Electronics
 - Xiring Teo
