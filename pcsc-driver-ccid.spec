@@ -1,13 +1,13 @@
 Summary:	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 Summary(pl.UTF-8):	Ogólny sterownik USB CCID (Chip/Smart Card Interface Devices)
 Name:		pcsc-driver-ccid
-Version:	1.3.6
+Version:	1.3.8
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: http://alioth.debian.org/project/showfiles.php?group_id=30105
-Source0:	http://alioth.debian.org/frs/download.php/2422/ccid-%{version}.tar.gz
-# Source0-md5:	fe8359632141f69cc6c0ca94c8fa38ee
+Source0:	http://alioth.debian.org/frs/download.php/2482/ccid-%{version}.tar.gz
+# Source0-md5:	ebb5fc927d73cd63737a9114481e8957
 URL:		http://pcsclite.alioth.debian.org/ccid.html
 BuildRequires:	libusb-devel >= 0.1.7
 BuildRequires:	pcsc-lite-devel >= 1.3.3
@@ -133,11 +133,13 @@ szeregowy. Obsługiwane czytniki CCID:
 %configure \
 	--enable-ccidtwindir=%{ccidtwindir} \
 	--enable-twinserial \
-	--enable-usbdropdir=%{usbdropdir}
+	--enable-usbdropdir=%{usbdropdir} \
+	--enable-udev
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT/etc/udev/rules.d
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -146,6 +148,8 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 mv $RPM_BUILD_ROOT%{_sysconfdir}/reader.conf .
+
+install src/pcscd_ccid.rules $RPM_BUILD_ROOT/etc/udev/rules.d/70-pcscd_ccid.rules
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -162,6 +166,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{usbdropdir}/ifd-ccid.bundle/Contents/Linux/libccid.so.*.*.*
 %{_mandir}/man1/RSA_SecurID_getpasswd.1*
 %{_mandir}/man8/Kobil_mIDentity_switch.8*
+/etc/udev/rules.d/70-pcscd_ccid.rules
 
 %files serial
 %defattr(644,root,root,755)
