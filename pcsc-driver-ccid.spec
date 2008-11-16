@@ -163,7 +163,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{usbdropdir}/ifd-ccid.bundle/Contents
 %{usbdropdir}/ifd-ccid.bundle/Contents/Info.plist
 %dir %{usbdropdir}/ifd-ccid.bundle/Contents/Linux
-%attr(755,root,root) %{usbdropdir}/ifd-ccid.bundle/Contents/Linux/libccid.so.*.*.*
+%attr(755,root,root) %{usbdropdir}/ifd-ccid.bundle/Contents/Linux/libccid.so*
 %{_mandir}/man1/RSA_SecurID_getpasswd.1*
 %{_mandir}/man8/Kobil_mIDentity_switch.8*
 /etc/udev/rules.d/70-pcscd_ccid.rules
@@ -171,4 +171,4 @@ rm -rf $RPM_BUILD_ROOT
 %files serial
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README SCARDGETATTRIB.txt readers/GemPCTwin.txt readers/supported_readers.txt reader.conf
-%attr(755,root,root) %{ccidtwindir}/libccidtwin.so.*
+%attr(755,root,root) %{ccidtwindir}/libccidtwin.so*
