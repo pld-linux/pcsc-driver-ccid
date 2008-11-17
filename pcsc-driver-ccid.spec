@@ -117,6 +117,19 @@ Interface Devices). Obsługiwane czytniki CCID:
 - Winbond Electronics
 - Xiring Teo
 
+%package -n udev-pcsc-driver-ccid
+Summary:	udev support for CCID PC/SC driver
+Summary(pl.UTF-8):	Obsługa udev dla sterownika PC/SC CCID
+Group:		Libraries
+Requires:	%{name} = %{version}-%{release}
+Requires:	udev-core
+
+%description -n udev-pcsc-driver-ccid
+udev support for CCID PC/SC driver.
+
+%description -n udev-pcsc-driver-ccid -l pl.UTF-8
+Obsługa udev dla sterownika PC/SC CCID.
+
 %package serial
 Summary:	Generic USB CCID driver for readers connected to serial port
 Summary(pl.UTF-8):	Ogólny sterownik USB CCID dla czytników podłączonych przez port szeregowy
@@ -173,6 +186,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{usbdropdir}/ifd-ccid.bundle/Contents/Linux/libccid.so*
 %{_mandir}/man1/RSA_SecurID_getpasswd.1*
 %{_mandir}/man8/Kobil_mIDentity_switch.8*
+
+%files -n udev-pcsc-driver-ccid
+%defattr(644,root,root,755)
 /etc/udev/rules.d/70-pcscd_ccid.rules
 
 %files serial
