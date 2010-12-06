@@ -1,13 +1,13 @@
 Summary:	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 Summary(pl.UTF-8):	Ogólny sterownik USB CCID (Chip/Smart Card Interface Devices)
 Name:		pcsc-driver-ccid
-Version:	1.3.11
-Release:	2
+Version:	1.3.13
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: http://alioth.debian.org/project/showfiles.php?group_id=30105
-Source0:	http://alioth.debian.org/frs/download.php/3080/ccid-%{version}.tar.bz2
-# Source0-md5:	727dc7eb4d560f81fe70a766a96de970
+Source0:	http://alioth.debian.org/frs/download.php/3300/ccid-%{version}.tar.bz2
+# Source0-md5:	275360cb253299b763e1122adf847265
 URL:		http://pcsclite.alioth.debian.org/ccid.html
 BuildRequires:	libusb-devel >= 0.1.7
 BuildRequires:	pcsc-lite-devel >= 1.5.3
@@ -15,6 +15,7 @@ BuildRequires:	pkgconfig
 Requires:	pcsc-lite >= 1.5.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		no_install_post_check_so	1
 %define		usbdropdir	/usr/%{_lib}/pcsc/drivers
 %define		ccidtwindir	/usr/%{_lib}/pcsc/drivers
 
@@ -193,5 +194,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files serial
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README SCARDGETATTRIB.txt readers/GemPCTwin.txt readers/supported_readers.txt reader.conf
+%doc AUTHORS ChangeLog README SCARDGETATTRIB.txt readers/supported_readers.txt reader.conf
 %attr(755,root,root) %{ccidtwindir}/libccidtwin.so*
