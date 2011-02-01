@@ -2,7 +2,7 @@ Summary:	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 Summary(pl.UTF-8):	Ogólny sterownik USB CCID (Chip/Smart Card Interface Devices)
 Name:		pcsc-driver-ccid
 Version:	1.4.0
-Release:	2
+Release:	3
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: http://alioth.debian.org/project/showfiles.php?group_id=30105
@@ -25,16 +25,16 @@ This package provides generic USB CCID (Chip/Smart Card Interface
 Devices) driver.
 
 Full lists of supported devices are available here:
-http://pcsclite.alioth.debian.org/supported.html
-http://pcsclite.alioth.debian.org/shouldwork.html
+<http://pcsclite.alioth.debian.org/supported.html>
+<http://pcsclite.alioth.debian.org/shouldwork.html>
 
 %description -l pl.UTF-8
 Ten pakiet zawiera ogólny sterownik USB CCID (Chip/Smart Card
 Interface Devices).
 
 Pełne listy obsługiwanych urządzeń są dostępne na WWW:
-http://pcsclite.alioth.debian.org/supported.html
-http://pcsclite.alioth.debian.org/shouldwork.html
+<http://pcsclite.alioth.debian.org/supported.html>
+<http://pcsclite.alioth.debian.org/shouldwork.html>
 
 %package -n udev-pcsc-driver-ccid
 Summary:	udev support for CCID PC/SC driver
@@ -84,7 +84,7 @@ szeregowy. Obsługiwane urządzenia CCID:
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/etc/udev/rules.d
+install -d $RPM_BUILD_ROOT/lib/udev/rules.d
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -92,7 +92,7 @@ install -d $RPM_BUILD_ROOT/etc/udev/rules.d
 %{__make} -C src install_ccidtwin \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install src/pcscd_ccid.rules $RPM_BUILD_ROOT/etc/udev/rules.d/70-pcscd_ccid.rules
+cp -p src/pcscd_ccid.rules $RPM_BUILD_ROOT/lib/udev/rules.d/70-pcscd_ccid.rules
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -112,7 +112,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n udev-pcsc-driver-ccid
 %defattr(644,root,root,755)
-/etc/udev/rules.d/70-pcscd_ccid.rules
+/lib/udev/rules.d/70-pcscd_ccid.rules
 
 %files serial
 %defattr(644,root,root,755)
