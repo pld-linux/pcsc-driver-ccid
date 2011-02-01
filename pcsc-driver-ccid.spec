@@ -11,6 +11,7 @@ Source0:	http://alioth.debian.org/frs/download.php/3333/ccid-%{version}.tar.bz2
 URL:		http://pcsclite.alioth.debian.org/ccid.html
 BuildRequires:	libusb-devel >= 1.0
 BuildRequires:	pcsc-lite-devel >= 1.6.2
+BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.583
 Requires:	pcsc-lite >= 1.6.2
@@ -21,7 +22,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		usbdropdir	/usr/%{_lib}/pcsc/drivers
 %define		ccidtwindir	/usr/%{_lib}/pcsc/drivers
 
-# check me
+# pcscd provides log_msg and log_xxd functions
 %define		skip_post_check_so	libccid.so.1.4.0 libccidtwin.so.1.4.0
 
 %description
