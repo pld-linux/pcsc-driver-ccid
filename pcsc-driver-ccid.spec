@@ -98,7 +98,7 @@ install -d $RPM_BUILD_ROOT/lib/udev/rules.d
 
 cp -p src/92_pcscd_ccid.rules $RPM_BUILD_ROOT/lib/udev/rules.d/70-pcscd_ccid.rules
 
-rm $RPM_BUILD_ROOT%{_docdir}/ccid/README_Kobil_mIDentity_switch.txt
+%{__rm} $RPM_BUILD_ROOT%{_docdir}/ccid/README_Kobil_mIDentity_switch.txt
 
 %clean
 rm -rf $RPM_BUILD_ROOT
