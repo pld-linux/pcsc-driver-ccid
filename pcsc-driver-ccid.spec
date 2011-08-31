@@ -1,13 +1,13 @@
 Summary:	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 Summary(pl.UTF-8):	Ogólny sterownik USB CCID (Chip/Smart Card Interface Devices)
 Name:		pcsc-driver-ccid
-Version:	1.4.2
+Version:	1.4.4
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: http://alioth.debian.org/project/showfiles.php?group_id=30105
-Source0:	http://alioth.debian.org/frs/download.php/3518/ccid-%{version}.tar.bz2
-# Source0-md5:	4a8f954c0aef48e8e5ab5d458cf819e8
+Source0:	http://alioth.debian.org/frs/download.php/3579/ccid-%{version}.tar.bz2
+# Source0-md5:	79ef91103bcdd99a3b31cb5c5721a829
 URL:		http://pcsclite.alioth.debian.org/ccid.html
 BuildRequires:	libusb-devel >= 1.0
 BuildRequires:	pcsc-lite-devel >= 1.6.2
@@ -98,23 +98,17 @@ install -d $RPM_BUILD_ROOT/lib/udev/rules.d
 
 cp -p src/92_pcscd_ccid.rules $RPM_BUILD_ROOT/lib/udev/rules.d/70-pcscd_ccid.rules
 
-%{__rm} $RPM_BUILD_ROOT%{_docdir}/ccid/README_Kobil_mIDentity_switch.txt
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README SCARDGETATTRIB.txt readers/supported_readers.txt contrib/Kobil_mIDentity_switch/README_Kobil_mIDentity_switch.txt
-%attr(755,root,root) %{_bindir}/RSA_SecurID_getpasswd
-%attr(755,root,root) %{_sbindir}/Kobil_mIDentity_switch
+%doc AUTHORS ChangeLog README SCARDGETATTRIB.txt readers/supported_readers.txt
 %dir %{usbdropdir}/ifd-ccid.bundle
 %dir %{usbdropdir}/ifd-ccid.bundle/Contents
 %{usbdropdir}/ifd-ccid.bundle/Contents/Info.plist
 %dir %{usbdropdir}/ifd-ccid.bundle/Contents/Linux
 %attr(755,root,root) %{usbdropdir}/ifd-ccid.bundle/Contents/Linux/libccid.so*
-%{_mandir}/man1/RSA_SecurID_getpasswd.1*
-%{_mandir}/man8/Kobil_mIDentity_switch.8*
 
 %files -n udev-pcsc-driver-ccid
 %defattr(644,root,root,755)
@@ -123,5 +117,5 @@ rm -rf $RPM_BUILD_ROOT
 %files serial
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README SCARDGETATTRIB.txt readers/supported_readers.txt
-%config(noreplace) %verify(not md5 mtime size) /etc/reader.conf.d/libccidtwin
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/reader.conf.d/libccidtwin
 %attr(755,root,root) %{ccidtwindir}/libccidtwin.so*
