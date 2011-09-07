@@ -10,11 +10,11 @@ Source0:	http://alioth.debian.org/frs/download.php/3579/ccid-%{version}.tar.bz2
 # Source0-md5:	79ef91103bcdd99a3b31cb5c5721a829
 URL:		http://pcsclite.alioth.debian.org/ccid.html
 BuildRequires:	libusb-devel >= 1.0
-BuildRequires:	pcsc-lite-devel >= 1.6.2
+BuildRequires:	pcsc-lite-devel >= 1.6.5
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.583
-Requires:	pcsc-lite >= 1.6.2
+Requires:	pcsc-lite >= 1.6.5
 Provides:	ccid = %{version}-%{release}
 Obsoletes:	ccid < 1.4.0-3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -58,7 +58,7 @@ Obsługa udev dla sterownika PC/SC CCID.
 Summary:	Generic USB CCID driver for readers connected to serial port
 Summary(pl.UTF-8):	Ogólny sterownik USB CCID dla czytników podłączonych przez port szeregowy
 Group:		Libraries
-Requires:	pcsc-lite >= 1.6.2
+Requires:	pcsc-lite >= 1.6.5
 
 %description serial
 Generic USB CCID driver for readers connected to serial port.
