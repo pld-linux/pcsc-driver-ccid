@@ -81,6 +81,7 @@ szeregowy. Obsługiwane urządzenia CCID:
 
 %build
 %configure \
+	--disable-silent-rules \
 	--enable-ccidtwindir=%{ccidtwindir} \
 	--enable-twinserial \
 	--enable-usbdropdir=%{usbdropdir}
