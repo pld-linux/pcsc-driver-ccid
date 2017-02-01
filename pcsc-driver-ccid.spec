@@ -1,13 +1,13 @@
 Summary:	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 Summary(pl.UTF-8):	Ogólny sterownik USB CCID (Chip/Smart Card Interface Devices)
 Name:		pcsc-driver-ccid
-Version:	1.4.24
+Version:	1.4.26
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: https://alioth.debian.org/frs/?group_id=30105
-Source0:	https://alioth.debian.org/frs/download.php/file/4171/ccid-%{version}.tar.bz2
-# Source0-md5:	915a03cda85b60fefbe3654cbdc68ca9
+Source0:	https://alioth.debian.org/frs/download.php/file/4205/ccid-%{version}.tar.bz2
+# Source0-md5:	852325456ad4db531c96c30b09fdd36f
 URL:		http://pcsclite.alioth.debian.org/ccid.html
 BuildRequires:	libusb-devel >= 1.0.9
 BuildRequires:	pcsc-lite-devel >= 1.8.3
