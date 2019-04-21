@@ -1,14 +1,13 @@
 Summary:	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 Summary(pl.UTF-8):	Ogólny sterownik USB CCID (Chip/Smart Card Interface Devices)
 Name:		pcsc-driver-ccid
-Version:	1.4.28
+Version:	1.4.30
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
-#Source0Download: https://alioth.debian.org/frs/?group_id=30105
-Source0:	https://alioth.debian.org/frs/download.php/file/4230/ccid-%{version}.tar.bz2
-# Source0-md5:	1345f0d5cab6c25ca1212b205219e59c
-URL:		http://pcsclite.alioth.debian.org/ccid.html
+Source0:	https://ccid.apdu.fr/files/ccid-%{version}.tar.bz2
+# Source0-md5:	817abceef715e02cb47617621fe192e0
+URL:		https://ccid.apdu.fr/
 BuildRequires:	libusb-devel >= 1.0.9
 BuildRequires:	pcsc-lite-devel >= 1.8.3
 BuildRequires:	perl-base
@@ -18,6 +17,7 @@ Requires:	libusb >= 1.0.9
 Requires:	pcsc-lite >= 1.8.3
 Provides:	ccid = %{version}-%{release}
 Obsoletes:	ccid < 1.4.0-3
+Obsoletes:	udev-pcsc-driver-ccid
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		usbdropdir	/usr/%{_lib}/pcsc/drivers
@@ -31,29 +31,16 @@ This package provides generic USB CCID (Chip/Smart Card Interface
 Devices) driver.
 
 Full lists of supported devices are available here:
-<http://pcsclite.alioth.debian.org/supported.html>
-<http://pcsclite.alioth.debian.org/shouldwork.html>
+<https://ccid.apdu.fr/ccid/supported.html>
+<https://ccid.apdu.fr/ccid/shouldwork.html>
 
 %description -l pl.UTF-8
 Ten pakiet zawiera ogólny sterownik USB CCID (Chip/Smart Card
 Interface Devices).
 
 Pełne listy obsługiwanych urządzeń są dostępne na WWW:
-<http://pcsclite.alioth.debian.org/supported.html>
-<http://pcsclite.alioth.debian.org/shouldwork.html>
-
-%package -n udev-pcsc-driver-ccid
-Summary:	udev support for CCID PC/SC driver
-Summary(pl.UTF-8):	Obsługa udev dla sterownika PC/SC CCID
-Group:		Libraries
-Requires:	%{name} = %{version}-%{release}
-Requires:	udev-core
-
-%description -n udev-pcsc-driver-ccid
-udev support for CCID PC/SC driver.
-
-%description -n udev-pcsc-driver-ccid -l pl.UTF-8
-Obsługa udev dla sterownika PC/SC CCID.
+<https://ccid.apdu.fr/ccid/supported.html>
+<https://ccid.apdu.fr/ccid/shouldwork.html>
 
 %package serial
 Summary:	Generic USB CCID driver for readers connected to serial port
@@ -111,9 +98,6 @@ rm -rf $RPM_BUILD_ROOT
 %{usbdropdir}/ifd-ccid.bundle/Contents/Info.plist
 %dir %{usbdropdir}/ifd-ccid.bundle/Contents/Linux
 %attr(755,root,root) %{usbdropdir}/ifd-ccid.bundle/Contents/Linux/libccid.so*
-
-%files -n udev-pcsc-driver-ccid
-%defattr(644,root,root,755)
 /lib/udev/rules.d/70-pcscd_ccid.rules
 
 %files serial
