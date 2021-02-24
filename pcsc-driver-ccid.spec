@@ -1,12 +1,12 @@
 Summary:	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 Summary(pl.UTF-8):	Ogólny sterownik USB CCID (Chip/Smart Card Interface Devices)
 Name:		pcsc-driver-ccid
-Version:	1.4.30
+Version:	1.4.33
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	https://ccid.apdu.fr/files/ccid-%{version}.tar.bz2
-# Source0-md5:	817abceef715e02cb47617621fe192e0
+# Source0-md5:	b11907894ce2d345439635e2b967e7e5
 URL:		https://ccid.apdu.fr/
 BuildRequires:	libusb-devel >= 1.0.9
 BuildRequires:	pcsc-lite-devel >= 1.8.3
@@ -92,7 +92,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README SCARDGETATTRIB.txt readers/supported_readers.txt
+%doc AUTHORS ChangeLog README.md SCARDGETATTRIB.txt readers/supported_readers.txt
 %dir %{usbdropdir}/ifd-ccid.bundle
 %dir %{usbdropdir}/ifd-ccid.bundle/Contents
 %{usbdropdir}/ifd-ccid.bundle/Contents/Info.plist
@@ -102,6 +102,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files serial
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README SCARDGETATTRIB.txt readers/supported_readers.txt
+%doc AUTHORS ChangeLog README.md SCARDGETATTRIB.txt readers/supported_readers.txt
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/reader.conf.d/libccidtwin
 %attr(755,root,root) %{ccidtwindir}/libccidtwin.so*
