@@ -1,12 +1,12 @@
 Summary:	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 Summary(pl.UTF-8):	Ogólny sterownik USB CCID (Chip/Smart Card Interface Devices)
 Name:		pcsc-driver-ccid
-Version:	1.5.3
+Version:	1.5.4
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	https://ccid.apdu.fr/files/ccid-%{version}.tar.bz2
-# Source0-md5:	98a01222e536796ead80dc3db2c6484b
+# Source0-md5:	c8a40df3dea424c69145835305c0867c
 URL:		https://ccid.apdu.fr/
 BuildRequires:	flex
 BuildRequires:	libusb-devel >= 1.0.9
