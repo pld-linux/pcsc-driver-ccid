@@ -19,7 +19,7 @@ Requires:	libusb >= 1.0.9
 Requires:	pcsc-lite >= 1.8.3
 Provides:	ccid = %{version}-%{release}
 Obsoletes:	ccid < 1.4.0-3
-Obsoletes:	udev-pcsc-driver-ccid
+Obsoletes:	udev-pcsc-driver-ccid < 1.4.30
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		usbdropdir	/usr/%{_lib}/pcsc/drivers
