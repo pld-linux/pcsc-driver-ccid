@@ -1,19 +1,23 @@
 Summary:	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 Summary(pl.UTF-8):	Ogólny sterownik USB CCID (Chip/Smart Card Interface Devices)
 Name:		pcsc-driver-ccid
-Version:	1.5.5
+Version:	1.6.0
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
-Source0:	https://ccid.apdu.fr/files/ccid-%{version}.tar.bz2
-# Source0-md5:	da78a5fa37e326988d85f3a0291c784e
+Source0:	https://ccid.apdu.fr/files/ccid-%{version}.tar.xz
+# Source0-md5:	bcb4219c9ed5b1b93859c67ecdcc9ab2
 URL:		https://ccid.apdu.fr/
 BuildRequires:	flex
 BuildRequires:	libusb-devel >= 1.0.9
+BuildRequires:	meson
+BuildRequires:	ninja
 BuildRequires:	pcsc-lite-devel >= 1.8.3
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.583
+BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 BuildRequires:	zlib-devel >= 1.2.3.1
 Requires:	libusb >= 1.0.9
 Requires:	pcsc-lite >= 1.8.3
@@ -23,7 +27,7 @@ Obsoletes:	udev-pcsc-driver-ccid < 1.4.30
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		usbdropdir	/usr/%{_lib}/pcsc/drivers
-%define		ccidtwindir	/usr/%{_lib}/pcsc/drivers
+%define		ccidtwindir	/usr/%{_lib}/pcsc/drivers/serial
 
 # pcscd provides log_msg and log_xxd functions
 %define		skip_post_check_so	libccid.so.1.4.0 libccidtwin.so.1.4.0
@@ -70,22 +74,17 @@ szeregowy. Obsługiwane urządzenia CCID:
 %setup -q -n ccid-%{version}
 
 %build
-%configure \
-	--disable-silent-rules \
-	--enable-ccidtwindir=%{ccidtwindir} \
-	--enable-twinserial \
-	--enable-usbdropdir=%{usbdropdir}
-%{__make}
+%meson build \
+	--default-library=shared \
+	-Dserial=true
+
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/lib/udev/rules.d
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
-
-%{__make} -C src install_ccidtwin \
-	DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 cp -p src/92_pcscd_ccid.rules $RPM_BUILD_ROOT/lib/udev/rules.d/70-pcscd_ccid.rules
 
@@ -94,7 +93,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README.md SCARDGETATTRIB.md readers/supported_readers.txt
+%doc AUTHORS README.md SCARDGETATTRIB.md readers/supported_readers.txt
 %dir %{usbdropdir}/ifd-ccid.bundle
 %dir %{usbdropdir}/ifd-ccid.bundle/Contents
 %{usbdropdir}/ifd-ccid.bundle/Contents/Info.plist
@@ -104,6 +103,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files serial
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README.md SCARDGETATTRIB.md readers/supported_readers.txt
+%doc AUTHORS README.md SCARDGETATTRIB.md readers/supported_readers.txt
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/reader.conf.d/libccidtwin
+%dir %{ccidtwindir}
 %attr(755,root,root) %{ccidtwindir}/libccidtwin.so*
