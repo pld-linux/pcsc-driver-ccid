@@ -15,7 +15,7 @@ BuildRequires:	ninja
 BuildRequires:	pcsc-lite-devel >= 1.8.3
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRequires:	zlib-devel >= 1.2.3.1
@@ -74,17 +74,17 @@ szeregowy. Obsługiwane urządzenia CCID:
 %setup -q -n ccid-%{version}
 
 %build
-%meson build \
+%meson \
 	--default-library=shared \
 	-Dserial=true
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/lib/udev/rules.d
 
-%ninja_install -C build
+%meson_install
 
 cp -p src/92_pcscd_ccid.rules $RPM_BUILD_ROOT/lib/udev/rules.d/70-pcscd_ccid.rules
 
