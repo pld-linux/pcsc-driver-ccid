@@ -1,12 +1,12 @@
 Summary:	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 Summary(pl.UTF-8):	Ogólny sterownik USB CCID (Chip/Smart Card Interface Devices)
 Name:		pcsc-driver-ccid
-Version:	1.6.2
+Version:	1.7.0
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	https://ccid.apdu.fr/files/ccid-%{version}.tar.xz
-# Source0-md5:	c37cc9386e22928a23d87ff24b9e3097
+# Source0-md5:	972dab8b9079ac1526474e43152c4506
 URL:		https://ccid.apdu.fr/
 BuildRequires:	flex
 BuildRequires:	libusb-devel >= 1.0.9
@@ -17,8 +17,10 @@ BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	udev-devel
 BuildRequires:	xz
 BuildRequires:	zlib-devel >= 1.2.3.1
+Requires:	group(pcscd)
 Requires:	libusb >= 1.0.9
 Requires:	pcsc-lite >= 1.8.3
 Provides:	ccid = %{version}-%{release}
@@ -86,8 +88,6 @@ install -d $RPM_BUILD_ROOT/lib/udev/rules.d
 
 %meson_install
 
-cp -p src/92_pcscd_ccid.rules $RPM_BUILD_ROOT/lib/udev/rules.d/70-pcscd_ccid.rules
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -99,7 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %{usbdropdir}/ifd-ccid.bundle/Contents/Info.plist
 %dir %{usbdropdir}/ifd-ccid.bundle/Contents/Linux
 %attr(755,root,root) %{usbdropdir}/ifd-ccid.bundle/Contents/Linux/libccid.so*
-/lib/udev/rules.d/70-pcscd_ccid.rules
+/lib/udev/rules.d/92_pcscd_ccid.rules
 
 %files serial
 %defattr(644,root,root,755)
